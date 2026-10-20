@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#4b705c">
+  <meta name="theme-color" content="#626c56">
   <meta name="description" content="Impulse für mehr Beweglichkeit, nährende Ernährung, innere Entwicklung und bewusste Beziehungen. Entdecke deinen Weg zu einem Leben in Einklang.">
   <title>Si Sei – Ganzheitlich leben, Schritt für Schritt</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,16 +12,17 @@
   <style>
     :root {
       color-scheme: light;
-      --forest: #4b705c;
-      --forest-deep: #355744;
-      --sage: #e4efe2;
-      --sage-strong: #bfd4bd;
-      --paper: #f8fbf6;
-      --white: #ffffff;
-      --ink: #26352d;
-      --muted: #5d7063;
-      --clay: #bd6549;
-      --line: #dde8dc;
+      --forest: #626c56;
+      --forest-deep: #424b3d;
+      --sage: #e9ece1;
+      --sage-strong: #c5c7b2;
+      --paper: #f8f6ef;
+      --white: #fffefa;
+      --ink: #30342e;
+      --muted: #64685d;
+      --accent: #59634f;
+      --gold: #c0a36d;
+      --line: #e5e3d8;
       --serif: "Playfair Display", Georgia, serif;
       --sans: "DM Sans", sans-serif;
       --content: 1160px;
@@ -41,7 +42,7 @@
     img { display: block; max-width: 100%; }
     a { color: inherit; }
     button, input { font: inherit; }
-    :focus-visible { outline: 3px solid var(--clay); outline-offset: 4px; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
     .skip-link {
       position: absolute;
       z-index: 10;
@@ -59,7 +60,7 @@
       align-items: center;
       gap: 10px;
       margin: 0 0 18px;
-      color: var(--clay);
+      color: var(--accent);
       font-size: .76rem;
       font-weight: 700;
       letter-spacing: .12em;
@@ -82,61 +83,58 @@
       padding: 13px 21px;
       border: 1px solid transparent;
       border-radius: 3px;
-      background: var(--clay);
+      background: var(--forest);
       color: white;
       font-size: .93rem;
       font-weight: 700;
       text-decoration: none;
       transition: background .2s ease, transform .2s ease;
     }
-    .button:hover { transform: translateY(-2px); background: #a9533a; }
+    .button:hover { transform: translateY(-2px); background: var(--forest-deep); }
     .button--light { background: var(--white); color: var(--forest); }
     .button--light:hover { background: var(--sage); }
     .arrow { font-size: 1.1em; line-height: 1; }
 
     .site-header {
-      position: absolute;
+      position: relative;
       z-index: 5;
       top: 0;
       right: 0;
       left: 0;
-      color: white;
+      background: var(--white);
+      color: var(--forest-deep);
     }
     .nav-wrap {
       display: flex;
       min-height: 86px;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid rgb(255 255 255 / 22%);
+      border-bottom: 1px solid var(--line);
     }
-    .brand { display: inline-flex; align-items: center; gap: 7px; color: white; text-decoration: none; }
-    .brand-word { font-family: var(--serif); font-size: 1.22rem; }
-    .family-mark { width: 82px; height: 52px; flex: 0 0 auto; overflow: visible; }
+    .brand { display: inline-flex; align-items: center; color: var(--forest-deep); text-decoration: none; }
+    .brand-image { display: block; width: 142px; height: 94px; object-fit: contain; }
     .nav-links { display: flex; align-items: center; gap: clamp(20px, 3vw, 42px); }
-    .nav-links a { color: white; font-size: .87rem; text-decoration: none; }
+    .nav-links a { color: var(--forest-deep); font-size: .87rem; text-decoration: none; }
     .nav-links a:not(.nav-cta):hover { text-decoration: underline; text-underline-offset: 5px; }
-    .nav-links .nav-cta { padding: 10px 15px; border: 1px solid rgb(255 255 255 / 70%); border-radius: 3px; }
+    .nav-links .nav-cta { padding: 10px 15px; border: 1px solid var(--forest); border-radius: 3px; }
     .menu-toggle { display: none; }
 
     .hero {
       position: relative;
-      display: flex;
-      min-height: 760px;
-      min-height: min(850px, 100svh);
-      align-items: center;
-      overflow: hidden;
-      background: var(--forest-deep);
-      color: white;
+      display: block;
+      background: var(--sage);
+      color: var(--ink);
     }
     .hero-image, .hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
-    .hero-image { object-fit: cover; object-position: center 48%; }
-    .hero-shade { background: linear-gradient(90deg, rgb(39 67 49 / 83%) 0%, rgb(39 67 49 / 66%) 43%, rgb(39 67 49 / 17%) 100%), linear-gradient(0deg, rgb(39 67 49 / 32%), transparent 35%); }
-    .hero-content { position: relative; z-index: 1; padding-top: 72px; }
-    .hero .eyebrow { color: #e7b69f; }
-    .hero-copy { max-width: 540px; margin-bottom: 30px; color: rgb(255 255 255 / 88%); font-size: clamp(1rem, 1.5vw, 1.18rem); }
+    .hero-image { position: static; display: block; width: 100%; height: auto; object-fit: contain; }
+    .hero-shade { display: none; }
+    .hero-content { position: relative; z-index: 1; padding: 54px 0 62px; }
+    .hero .eyebrow { color: var(--accent); }
+    .hero-copy { max-width: 540px; margin-bottom: 30px; color: var(--muted); font-size: clamp(1rem, 1.5vw, 1.18rem); }
     .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
+    .hero .text-link { color: var(--forest-deep); }
     .text-link { color: white; font-size: .93rem; font-weight: 600; text-decoration-thickness: 1px; text-underline-offset: 5px; }
-    .hero-note { position: absolute; right: max(24px, calc((100vw - var(--content)) / 2)); bottom: 30px; color: rgb(255 255 255 / 78%); font-size: .78rem; }
+    .hero-note { margin: 0; padding: 0 max(24px, calc((100vw - var(--content)) / 2)) 22px; color: var(--muted); font-size: .78rem; text-align: right; }
 
     .intro { padding: 108px 0 80px; }
     .intro-head { display: grid; grid-template-columns: 1fr minmax(280px, .7fr); align-items: end; gap: 48px; }
@@ -158,14 +156,14 @@
       transition: border-color .2s ease, transform .2s ease, background .2s ease;
     }
     .topic-card:nth-child(4) { grid-column: 2 / span 2; }
-    .topic-card:hover { transform: translateY(-4px); border-color: var(--sage-strong); background: #f5f7f1; }
-    .topic-number { color: var(--clay); font-size: .76rem; font-weight: 700; letter-spacing: .1em; }
+    .topic-card:hover { transform: translateY(-4px); border-color: var(--sage-strong); background: #f3f2e9; }
+    .topic-number { color: var(--accent); font-size: .76rem; font-weight: 700; letter-spacing: .1em; }
     .topic-card h3 { max-width: 240px; margin: 16px 0 6px; font-family: var(--serif); font-size: 1.5rem; font-weight: 500; }
     .topic-card p { max-width: 265px; margin: 0; color: var(--muted); font-size: .9rem; }
     .topic-arrow { position: absolute; right: 23px; bottom: 22px; color: var(--forest); font-size: 1.2rem; }
     .field-guides { padding: 18px 0 94px; }
     .guide-row { display: grid; grid-template-columns: minmax(170px, .65fr) 1.35fr; gap: 42px; padding: 27px 0; border-top: 1px solid var(--line); }
-    .guide-label { color: var(--clay); font-size: .76rem; font-weight: 700; letter-spacing: .1em; }
+    .guide-label { color: var(--accent); font-size: .76rem; font-weight: 700; letter-spacing: .1em; }
     .guide-row h3 { margin: 4px 0 8px; font-family: var(--serif); font-size: 1.55rem; font-weight: 500; }
     .guide-row p { max-width: 700px; margin: 0; color: var(--muted); }
     .guide-row strong { color: var(--ink); font-weight: 600; }
@@ -176,10 +174,10 @@
     .approach-image { width: 100%; height: 470px; object-fit: cover; object-position: center; border-radius: 3px; }
     .image-caption { position: absolute; right: -18px; bottom: 22px; max-width: 190px; padding: 15px 18px; background: var(--paper); color: var(--forest); font-family: var(--serif); font-size: 1.05rem; line-height: 1.4; }
     .approach-copy h2 { max-width: 510px; }
-    .approach-copy > p:not(.eyebrow) { max-width: 530px; color: #4f5c54; }
+    .approach-copy > p:not(.eyebrow) { max-width: 530px; color: var(--muted); }
     .principles { display: grid; gap: 17px; margin: 28px 0 0; padding: 0; list-style: none; }
     .principles li { display: flex; align-items: baseline; gap: 13px; color: var(--forest); font-size: .94rem; font-weight: 600; }
-    .principles li::before { width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%; background: var(--clay); content: ""; }
+    .principles li::before { width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%; background: var(--gold); content: ""; }
 
     .featured { padding: 102px 0 110px; }
     .featured-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 38px; }
@@ -188,64 +186,63 @@
     .feature-row { display: grid; grid-template-columns: 1.05fr .95fr; min-height: 390px; background: var(--forest); color: white; }
     .feature-photo { width: 100%; height: 100%; min-height: 390px; object-fit: cover; }
     .feature-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: clamp(28px, 5vw, 66px); }
-    .feature-copy .eyebrow { color: #e7b69f; }
+    .feature-copy .eyebrow { color: #d9c18f; }
     .feature-copy h3 { max-width: 410px; margin-bottom: 14px; font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 500; line-height: 1.2; }
     .feature-copy p:not(.eyebrow) { max-width: 420px; margin-bottom: 24px; color: rgb(255 255 255 / 78%); }
     .feature-copy .text-link { font-size: .9rem; }
 
-    .newsletter { padding: 78px 0; background: #e7f0e5; }
+    .newsletter { padding: 78px 0; background: #efede3; }
     .newsletter-inner { display: grid; grid-template-columns: 1fr minmax(320px, .8fr); align-items: center; gap: 56px; }
     .newsletter h2 { max-width: 580px; margin-bottom: 12px; font-size: clamp(2.1rem, 4vw, 3.35rem); }
-    .newsletter-copy { max-width: 540px; margin-bottom: 0; color: #58645c; }
+    .newsletter-copy { max-width: 540px; margin-bottom: 0; color: var(--muted); }
     .signup-form { display: flex; gap: 9px; }
     .signup-form label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
-    .signup-form input { width: 100%; min-width: 0; min-height: 52px; padding: 12px 15px; border: 1px solid #c9c9bc; border-radius: 3px; background: var(--white); color: var(--ink); }
+    .signup-form input { width: 100%; min-width: 0; min-height: 52px; padding: 12px 15px; border: 1px solid #d3cdbd; border-radius: 3px; background: var(--white); color: var(--ink); }
     .form-message { min-height: 24px; margin: 10px 0 0; color: var(--forest); font-size: .83rem; }
-    .privacy-note { margin: 10px 0 0; color: #667168; font-size: .75rem; }
+    .privacy-note { margin: 10px 0 0; color: var(--muted); font-size: .75rem; }
 
-    .site-footer { padding: 35px 0; background: var(--forest-deep); color: white; }
+    .site-footer { padding: 18px 0; background: var(--white); color: var(--forest-deep); }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .footer-inner p { margin: 0; color: rgb(255 255 255 / 66%); font-size: .8rem; }
+    .footer-inner p { margin: 0; color: var(--muted); font-size: .8rem; }
     .footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
-    .footer-links a { color: white; font-size: .8rem; text-decoration: none; }
+    .footer-links a { color: var(--forest-deep); font-size: .8rem; text-decoration: none; }
     .footer-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
     @media (max-width: 760px) {
       .container { width: min(var(--content), calc(100% - 36px)); }
-      .nav-wrap { min-height: 72px; }
+      .nav-wrap { min-height: 76px; }
+      .brand-image { width: 116px; height: 76px; }
       .menu-toggle {
         display: inline-flex;
         width: 44px;
         height: 44px;
         align-items: center;
         justify-content: center;
-        border: 1px solid rgb(255 255 255 / 58%);
+        border: 1px solid var(--forest);
         border-radius: 3px;
         background: transparent;
-        color: white;
+        color: var(--forest-deep);
         cursor: pointer;
         font-size: 1.3rem;
       }
       .nav-links {
         position: absolute;
-        top: 71px;
+        top: 75px;
         right: 0;
         left: 0;
         display: none;
         align-items: stretch;
         gap: 0;
         padding: 8px 18px 18px;
-        background: var(--forest-deep);
+        background: var(--white);
       }
       .nav-links.is-open { display: flex; flex-direction: column; }
       .nav-links a { padding: 12px 3px; }
       .nav-links .nav-cta { margin-top: 6px; text-align: center; }
-      .hero { min-height: 720px; min-height: 94svh; align-items: end; }
-      .hero-image { object-position: 58% center; }
-      .hero-shade { background: linear-gradient(90deg, rgb(39 67 49 / 77%), rgb(39 67 49 / 29%)), linear-gradient(0deg, rgb(39 67 49 / 74%), transparent 75%); }
-      .hero-content { padding-top: 140px; padding-bottom: 116px; }
+      .hero { min-height: 0; }
+      .hero-content { padding: 42px 0 48px; }
       h1 { max-width: 600px; font-size: clamp(3rem, 12vw, 5.1rem); }
-      .hero-note { right: 18px; bottom: 18px; left: 18px; font-size: .72rem; }
+      .hero-note { padding: 0 18px 18px; font-size: .72rem; text-align: left; }
       .intro { padding: 75px 0 62px; }
       .intro-head, .approach-layout, .newsletter-inner { grid-template-columns: 1fr; gap: 24px; }
       .topic-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 32px; }
@@ -286,27 +283,7 @@
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="#start" aria-label="Si Sei, zur Startseite">
-        <span class="brand-word">Si</span>
-        <svg class="family-mark" viewBox="0 0 128 72" role="img" aria-labelledby="family-logo-title">
-          <title id="family-logo-title">Anonyme Familie mit drei Kindern, Hund und Katze</title>
-          <path d="M7 65C8 29 29 7 64 7s56 22 57 58" fill="none" stroke="#dcebd8" stroke-linecap="round" stroke-width="1.5" opacity=".8"/>
-          <circle cx="64" cy="8" r="2" fill="#e7b69f"/>
-          <path d="M9 55c5-1 8-4 10-9 2 5 5 8 10 9-5 1-8 4-10 9-2-5-5-8-10-9Zm80-5c4-1 7-4 8-8 2 4 4 7 9 8-5 1-7 4-9 8-1-4-4-7-8-8Z" fill="#dcebd8" opacity=".9"/>
-          <g fill="#fff">
-            <circle cx="24" cy="16" r="8"/><circle cx="104" cy="16" r="8"/>
-            <path d="M16 15c0-7 4-11 9-11 6 0 9 4 9 10-4-1-7-4-8-7-2 4-5 6-10 8Zm80 0c0-7 4-11 9-11 6 0 9 4 9 10-4-1-7-4-8-7-2 4-5 6-10 8Z"/>
-            <path d="M12 65V42c0-9 5-15 12-15s12 6 12 15v23Zm80 0V42c0-9 5-15 12-15s12 6 12 15v23Z"/>
-            <circle cx="47" cy="29" r="6"/><circle cx="64" cy="25" r="7"/><circle cx="81" cy="29" r="6"/>
-            <path d="M41 59V42c0-7 2-11 6-11s7 4 7 11v17Zm16 0V38c0-8 2-12 7-12s7 4 7 12v21Z"/>
-            <path d="M74 59V43c0-7 3-11 7-11s7 4 7 11v16H74Z"/>
-          </g>
-          <path d="M56 43h16l5 16H51z" fill="#c98262"/>
-          <g fill="#c7d9c3">
-            <path d="M39 66c0-5 3-9 7-9l4-4 4 4c4 0 7 4 7 9v3H39zm38 3v-7c0-4 3-7 7-7l3-5 4 5c4 0 7 3 7 7v7z"/>
-            <path d="M40 59 37 55l1-7 4 4m12 7 3-4-1-7-4 4m27 0-3-5 1-5 4 4m12 6 3-5-1-5-4 4"/>
-          </g>
-        </svg>
-        <span class="brand-word">Sei</span>
+        <img class="brand-image" src="assets/logo.png" alt="">
       </a>
       <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="hauptnavigation">☰</button>
       <nav class="nav-links" id="hauptnavigation" aria-label="Hauptnavigation">
@@ -320,8 +297,7 @@
 
   <main id="hauptinhalt">
     <section class="hero" id="start" aria-labelledby="hero-title">
-      <img class="hero-image" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=2200&q=85" alt="Frau in einer ruhigen Yoga-Dehnung im warmen Morgenlicht" fetchpriority="high">
-      <div class="hero-shade" aria-hidden="true"></div>
+      <img class="hero-image" src="assets/hero-banner.png" alt="Si Sei: Familienillustration und Wortmarke vor hellem Naturhintergrund" fetchpriority="high">
       <div class="container hero-content">
         <p class="eyebrow">Körper. Geist. Miteinander.</p>
         <h1 id="hero-title">Ein gutes Leben beginnt in dir.</h1>
@@ -462,26 +438,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <a class="brand" href="#start" aria-label="Si Sei, zur Startseite">
-        <span class="brand-word">Si</span>
-        <svg class="family-mark" viewBox="0 0 128 72" aria-hidden="true">
-          <path d="M7 65C8 29 29 7 64 7s56 22 57 58" fill="none" stroke="#dcebd8" stroke-linecap="round" stroke-width="1.5" opacity=".8"/>
-          <circle cx="64" cy="8" r="2" fill="#e7b69f"/>
-          <path d="M9 55c5-1 8-4 10-9 2 5 5 8 10 9-5 1-8 4-10 9-2-5-5-8-10-9Zm80-5c4-1 7-4 8-8 2 4 4 7 9 8-5 1-7 4-9 8-1-4-4-7-8-8Z" fill="#dcebd8" opacity=".9"/>
-          <g fill="#fff">
-            <circle cx="24" cy="16" r="8"/><circle cx="104" cy="16" r="8"/>
-            <path d="M16 15c0-7 4-11 9-11 6 0 9 4 9 10-4-1-7-4-8-7-2 4-5 6-10 8Zm80 0c0-7 4-11 9-11 6 0 9 4 9 10-4-1-7-4-8-7-2 4-5 6-10 8Z"/>
-            <path d="M12 65V42c0-9 5-15 12-15s12 6 12 15v23Zm80 0V42c0-9 5-15 12-15s12 6 12 15v23Z"/>
-            <circle cx="47" cy="29" r="6"/><circle cx="64" cy="25" r="7"/><circle cx="81" cy="29" r="6"/>
-            <path d="M41 59V42c0-7 2-11 6-11s7 4 7 11v17Zm16 0V38c0-8 2-12 7-12s7 4 7 12v21Z"/>
-            <path d="M74 59V43c0-7 3-11 7-11s7 4 7 11v16H74Z"/>
-          </g>
-          <path d="M56 43h16l5 16H51z" fill="#c98262"/>
-          <g fill="#c7d9c3">
-            <path d="M39 66c0-5 3-9 7-9l4-4 4 4c4 0 7 4 7 9v3H39zm38 3v-7c0-4 3-7 7-7l3-5 4 5c4 0 7 3 7 7v7z"/>
-            <path d="M40 59 37 55l1-7 4 4m12 7 3-4-1-7-4 4m27 0-3-5 1-5 4 4m12 6 3-5-1-5-4 4"/>
-          </g>
-        </svg>
-        <span class="brand-word">Sei</span>
+        <img class="brand-image" src="assets/logo.png" alt="">
       </a>
       <p>© <span id="year"></span> Si Sei. Inspiration, die gut tut.</p>
       <nav class="footer-links" aria-label="Rechtliches">
